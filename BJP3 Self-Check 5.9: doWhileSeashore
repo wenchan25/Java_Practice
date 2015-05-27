@@ -1,0 +1,7 @@
+Scanner console = new Scanner(System.in);
+String ans; // it only declares the variable, not initialized yet
+do {
+    System.out.println("She sells seashells by the seashore.");   
+    System.out.print("Do you want to hear it again? "); 
+    ans = console.next(); // here is what has been initialized
+}while (ans.equals("y"));
