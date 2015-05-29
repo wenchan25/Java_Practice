@@ -1,0 +1,21 @@
+int SENTINEL = -1; // declare this variable to fit future variance
+System.out.print("Type a number (or " + SENTINEL + " to stop): ");
+Scanner console = new Scanner(System.in);
+int input = console.nextInt();
+int min = input; // initiate min and max with the value of 1st input
+int max = input;
+while (input != SENTINEL) { // loop starts when the input doesn't equal to sentinel
+    if (input < min) {
+        min = input;
+    } else if (input > max) {
+        max = input;
+    }
+
+    System.out.print("Type a number (or " + SENTINEL + " to stop): "); // 2nd time of asking quesitons
+    input = console.nextInt(); // another loop begins
+}
+
+if (min != SENTINEL) { // this is necessary to avoid printing out sentinel as the min
+    System.out.println("Maximum was " + max); 
+    System.out.println("Minimum was " + min);
+}
