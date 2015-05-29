@@ -1,0 +1,9 @@
+public static boolean isVowel(char c) {
+    c = Character.toLowerCase(c);   // case-insensitive
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+}
+
+// or there is another way
+public static boolean isVowel(char c) {
+    return "aeiouAEIOU".indexOf(c) >= 0;
+}
