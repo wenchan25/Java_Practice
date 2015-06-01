@@ -1,0 +1,7 @@
+public static int gcd (int a, int b) {
+    if (a == 0 || b == 0) {
+        return Math.max(Math.abs(a), Math.abs(b));
+    } else {
+        return gcd (b, a%b);
+    }
+}
