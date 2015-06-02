@@ -1,0 +1,16 @@
+public static void randomX() {
+  Random rand = new Random();
+  int num = 5 + rand.nextInt(15);
+
+  while (true) { // it took a long time to figure out just filling in the "true" test
+    for (int i = 0; i < num; i++) {
+        System.out.print("x");
+    }
+    if (num > 16) { // for the case of exceeding 16, it will print one line anyway
+        break;
+    } else {
+       System.out.println();
+    }
+    num = 5 + rand.nextInt(15);
+    }
+}
