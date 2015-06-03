@@ -1,0 +1,16 @@
+public static int swapDigitPairs(int number) {
+    int result = 0;
+    int place = 1;
+    while (number > 9) { // the terminating condition is that there are at least two digits remaining
+        result += place * 10 * (number % 10); // swap the last digit to the tenth place
+        /*
+        the loop consumes digits from the right hand side of the number, 
+        so the odd/even processing distinction is gracefully handled
+        */
+        number /= 10; // truncate the number
+        result += place * (number % 10); // swap the tenth digit to the single digit place
+        number /= 10; // truncate again
+        place *= 100; // loop logic deals with two digits per iteration
+    }
+    return result + place * number;
+}
