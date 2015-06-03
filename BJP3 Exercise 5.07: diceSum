@@ -1,0 +1,20 @@
+public static void diceSum () {
+    Scanner console = new Scanner(System.in);
+    System.out.print("Desired dice sum: "); 
+    /* to pass the test, there should be nothing following the printline
+       if console.nextInt() was put there, there will be an additional 
+       line before the print line
+    */
+    int desiredSum = console.nextInt();             
+    
+    while (true) {
+        Random rand = new Random();
+        int n1 = rand.nextInt(6)+1;
+        int n2 = rand.nextInt(6)+1;
+        System.out.println(n1 + " and " + n2 + " = " + (n1+n2));
+        if (n1+n2 == desiredSum) {
+            break;
+        }    
+    }
+    
+}
