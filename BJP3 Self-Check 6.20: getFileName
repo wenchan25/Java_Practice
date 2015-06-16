@@ -1,0 +1,9 @@
+public static String getFileName() {
+    Scanner console = new Scanner(System.in);
+    String filename;
+    do {  // do loop
+        System.out.print("Type a file name: ");
+        filename = console.nextLine();
+    } while (!(new File(filename).exists())); // while it is not found using the exsit method
+    return filename;
+}
