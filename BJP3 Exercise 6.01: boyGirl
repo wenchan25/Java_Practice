@@ -1,0 +1,21 @@
+public static void boyGirl(Scanner console) {
+     int boyCount = 0;
+     int girlCount = 0;
+     int boySum = 0;
+     int girlSum = 0;
+
+     while (console.hasNext()) {
+         String throwAway = console.next(); // throw away name, consume the token
+
+         if (boyCount == girlCount) { // test to see it it has checked girl
+             boyCount++;
+             boySum += console.nextInt();
+         } else {
+             girlCount++;
+             girlSum += console.nextInt();
+         }
+     }
+
+     System.out.println(boyCount + " boys, " + girlCount + " girls");
+     System.out.println("Difference between boys' and girls' sums: " + Math.abs(girlSum - boySum));
+}
