@@ -1,0 +1,27 @@
+public static void countCoins(Scanner inputStream) {
+    final double MONEY_QUARTER = 0.25; // 25 Cents
+    final double MONEY_DIME = 0.10; // 10 Cents
+    final double MONEY_NICKEL = 0.05; // 5 Cents
+    final double MONEY_PENNY = 0.01; // 1 Cent
+        
+    double totalAmount = 0.0;
+    int coinCount = 0;
+    String coinType;
+        
+    while (inputStream.hasNext()) {
+        coinCount = inputStream.nextInt();
+        coinType = inputStream.next();
+        
+        if (coinType.equalsIgnoreCase("QUARTERS")) {
+            totalAmount += MONEY_QUARTER * coinCount;
+        } else if (coinType.equalsIgnoreCase("DIMES")) {
+            totalAmount += MONEY_DIME * coinCount;
+        } else if (coinType.equalsIgnoreCase("NICKELS")) {
+            totalAmount += MONEY_NICKEL * coinCount;
+        } else if (coinType.equalsIgnoreCase("PENNIES")) {
+            totalAmount += MONEY_PENNY * coinCount;
+        }                
+    }
+    String result = String.format("%.2f", totalAmount); // format to 2 decimals
+    System.out.println("Total money: $" + result);
+}
