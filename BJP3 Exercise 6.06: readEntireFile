@@ -1,0 +1,25 @@
+// the idea for this problem is to knwo that /n means a new line
+// which has to be added to the string result by "\n"
+
+public static String readEntireFile (Scanner input) {
+    String result="";
+    while (input.hasNext()){
+        String temp = input.nextLine();
+        if (temp.length() != 0) {
+            result += temp+"\n"; // \n means there is a new line
+        } else {
+            result += "\n";    
+        }
+   }
+   return result;
+}
+
+/*
+Write a method named readEntireFile that accepts a Scanner 
+representing an input file as its parameter, then reads that
+file and returns the entire text contents of that file as a String.
+
+Test 1	"hello there\nhow are you\n\nI am fine\n"
+"hello there\nhow are you\n\nI am fine\n"
+
+*/
