@@ -1,0 +1,17 @@
+public static void doubleSpace (Scanner input, PrintStream output) throws FileNotFoundException {
+    //PrintStream result = new PrintStream(new File ("output_doublespace_1.txt"));  
+    //上面一行可以不要，作为PrintStream用法的参考
+    
+    while (input.hasNextLine()){
+        String str = input.nextLine();
+        output.println(str); // 这里调用的方法参数output，把str写入到文件中去了
+        output.println(); // double space
+    }
+}
+
+/*
+Write a method named doubleSpace that accepts a Scanner for an input file and a PrintStream for
+an output file as its parameters, writing into the output file a double-spaced version of the text 
+in the input file. You can achieve this task by inserting a blank line between each line of output.
+
+*/
