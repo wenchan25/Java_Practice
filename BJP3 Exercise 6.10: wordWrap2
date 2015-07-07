@@ -1,0 +1,26 @@
+public static void wordWrap2 (Scanner input, PrintStream output) {
+    //PrintStream output = new PrintStream(new file("output.txt"));
+    
+    while (input.hasNextLine()) {
+        String line = input.nextLine();
+        int length = 60;
+        
+        while (line.length()>length) {
+            output.println(line.substring(0, length)); // substring not subString
+            line = line.substring(length); // cut the string
+        }
+        output.println(line);  // to print the rest line after being cut
+    }
+}
+
+
+//http://courses.cs.washington.edu/courses/cse143/06su/chapters/ch6.html
+/*System.out is a variable that stores a reference to an object of type PrintStream. 
+  The print and println statements you've been writing are calls on methods that are
+  part of the PrintStream class. The variable System.out stores a reference to a special 
+  PrintStream object that is tied to the console window. But we can construct other PrintStream 
+  objects that send their output to other places. Suppose, for example, that we want to send output 
+  to a file called results.txt. We can construct a PrintStream object as follows:
+        PrintStream output = new PrintStream(new File("results.txt"));
+*/
+
