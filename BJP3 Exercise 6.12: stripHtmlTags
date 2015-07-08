@@ -1,0 +1,7 @@
+public static void stripHtmlTags(Scanner input) {
+        while (input.hasNext()) {
+            String line = input.nextLine();
+            String line1 = line.replaceAll("\\<.*?\\>", ""); // this is what does the trick
+            System.out.println(line1);
+        }
+    }
