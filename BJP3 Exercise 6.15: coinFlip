@@ -1,0 +1,22 @@
+public static void coinFlip(Scanner input) {
+        while (input.hasNextLine()) {
+            Scanner line = new Scanner(input.nextLine());
+            int countH = 0; // 这两个数必须放在这个域里面，因为每次都要清零
+            int countT = 0;
+
+            while (line.hasNext()) {
+                String coin = line.next();
+                if (coin.equals("H") || coin.equals("h")) {
+                    countH++;
+                } else if (coin.equals("T") || coin.equals("t")) {
+                    countT++;
+                }
+            }
+            double pct = (countH * 100.0) / (countH + countT);
+            System.out.printf("%d heads (%.1f%%)\n", countH, pct); // \n是折行，小数点后1位是%.1f
+            if (pct > 50) {
+                System.out.println("You win!");
+            }
+            System.out.println();
+        }
+    }
