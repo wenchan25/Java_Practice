@@ -1,0 +1,31 @@
+public static int mostCommonNames (Scanner input) {
+    int uniqueNames = 0;
+    
+    while (input.hasNextLine()) {
+        Scanner line = new Scanner(input.nextLine());
+        uniqueNames++; // this is tricky, one number has to be added every time start a new line!!!
+        String refName = line.next(); // consume first name as reference
+        String mostName = refName; // set the first one as the result;
+        int count = 1; //at least one name exists
+        int countMax = 1; 
+        
+        while (line.hasNext()) {
+            String name2 = line.next();
+            if (name2.equals(refName)) {
+                count++; // increase the count;
+                if (countMax < count) { //if current name is the most
+                    countMax = count; // set the current count as max
+                    mostName = name2; // set the current name as the most common name
+                }
+                
+            } else {
+                refName = name2; // if not equal, use name2 as the reference instead
+                count = 1; //reset count
+                uniqueNames++;
+            }                               
+        }        
+        System.out.println("Most common: " + mostName);                
+    }
+    return uniqueNames;
+
+}
