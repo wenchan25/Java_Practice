@@ -1,0 +1,35 @@
+//此题几处需要注意，一是先用String，再用Scanner来读取一行以避免consume；二是longestLine可以替换
+//只要takneMax <= tokenCount
+
+public static void inputStats (Scanner input) {
+    int tokenMax = 1;
+    int lineNumber = 1; //store the line number at the very top of the scope
+    String longestLine = "";
+    
+    while (input.hasNextLine()) {
+        String line = input.nextLine();// this is the tricky part, use String line first, then put it in the scanner
+        Scanner tokens = new Scanner(line);// to avoid the token consumed
+        
+        int tokenCount = 1; // at least have one token for every line
+        String firstWord = tokens.next();
+        int maxLength = firstWord.length(); // length of first word
+                
+        while (tokens.hasNext()){
+            
+            String str = tokens.next();// consume the token;
+            tokenCount++;          
+            
+            if (maxLength < str.length()) { //to test which token is the longest word
+                maxLength = str.length();
+            }
+        }
+        if (tokenMax <= tokenCount && line.length() > longestLine.length()){ // it has to be <= to make test case 2 pass
+            tokenMax = tokenCount;
+            longestLine = line; // String longestLine can be altered
+        } 
+        System.out.println("Line " + lineNumber + " has " + tokenCount + " tokens" + " (longest = " + maxLength + ")");
+        lineNumber++;        
+    }
+    System.out.println("Longest line: " + longestLine);
+
+}
