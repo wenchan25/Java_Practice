@@ -1,0 +1,17 @@
+public static void plusScores (Scanner input) {
+    while (input.hasNextLine()) {
+        String line = input.nextLine();
+        String plusLine = input.nextLine();
+        
+        int plus = 0;
+        int total = plusLine.length();
+        for (int i = 0; i < plusLine.length(); i ++) {
+            if (plusLine.charAt(i) == '+') {
+                plus++;
+            }
+        }
+        double ans = plus*100.0/total;
+        System.out.printf("%s: %.1f%% plus\n", line, ans); // 两个%%表示一个         
+    }
+
+}
