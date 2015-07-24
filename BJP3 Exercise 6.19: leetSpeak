@@ -1,0 +1,33 @@
+public static void leetSpeak (Scanner input, PrintStream output) {
+    while (input.hasNextLine()) {
+        String line = input.nextLine();
+        Scanner sc = new Scanner (line); // scan every line
+        
+        while (sc.hasNext()) {
+            String str = sc.next(); // consume every word
+            String str1;      
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) == 'o') {
+                    str = str.replace('o', '0');
+                } if (str.charAt(i) == 'l') {
+                    str = str.replace('l', '1');
+                } if (str.charAt(i) == 'e') {
+                    str = str.replace('e', '3');
+                } if (str.charAt(i) == 'a') {
+                    str = str.replace('a', '4');
+                } if (str.charAt(i) == 't') {
+                    str = str.replace('t', '7');
+                } 
+            }
+            if (str.substring(str.length()-1).equals("s")) { // substringH后面必须要equals一个string，不能是char
+                str1 = str.substring(0, str.length()-1) + 'Z'; //这里可以跟char
+            }else {
+                str1 = str;
+            }            
+            String ans = "(" + str1 + ") ";
+            output.append(ans);
+        }
+        output.println();    
+    }
+
+}
